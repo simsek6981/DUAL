@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klima Technik Muster GmbH</title>
+<link href="css/style.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-deep: #0a1628;
+    --blue-mid: #0d3b6e;
+    --blue-bright: #1565c0;
+    --blue-light: #1e88e5;
+    --blue-accent: #42a5f5;
+    --red: #e53935;
+    --red-light: #ef5350;
+    --white: #ffffff;
+    --off-white: #f0f4f8;
+    --gray-light: #e1e8f0;
+    --text-muted: #8fa3b8;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--off-white);
+    color: var(--blue-deep);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAVBAR ─────────────────────────────────── */
+  .navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 72px;
+    background: rgba(10, 22, 40, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(66, 165, 245, 0.15);
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .brand-icon {
+    width: 38px; height: 38px;
+    background: linear-gradient(135deg, var(--blue-light), var(--blue-accent));
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  .brand-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--white);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .brand-name span {
+    color: var(--blue-accent);
+  }
+
+  .navbar nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .navbar nav a {
+    color: var(--gray-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+
+  .navbar nav a:hover {
+    color: var(--white);
+    background: rgba(66, 165, 245, 0.12);
+  }
+
+  .navbar nav a.btn-nav {
+    background: var(--red);
+    color: var(--white);
+    padding: 9px 20px;
+  }
+
+  .navbar nav a.btn-nav:hover {
+    background: var(--red-light);
+    transform: translateY(-1px);
+  }
+
+  /* ─── HERO ────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    background: var(--blue-deep);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 48px 80px;
+  }
+
+  .hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(66, 165, 245, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(66, 165, 245, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(21, 101, 192, 0.35) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-glow-red {
+    position: absolute;
+    bottom: -100px; left: 30%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(229, 57, 53, 0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(66, 165, 245, 0.12);
+    border: 1px solid rgba(66, 165, 245, 0.3);
+    color: var(--blue-accent);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 7px; height: 7px;
+    background: var(--red);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.4); }
+  }
+
+  .hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.0;
+    color: var(--white);
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .hero h1 .highlight {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--blue-accent);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin: 20px 0 36px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .hero-sub span {
+    color: var(--blue-accent);
+    margin: 0 8px;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    border-radius: 6px;
+    transition: all 0.25s;
+    box-shadow: 0 4px 24px rgba(229, 57, 53, 0.3);
+  }
+
+  .btn-primary:hover {
+    background: var(--red-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(229, 57, 53, 0.45);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    border-radius: 6px;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    transition: all 0.25s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--blue-accent);
+    color: var(--blue-accent);
+    transform: translateY(-2px);
+  }
+
+  .hero-stats {
+    position: absolute;
+    bottom: 60px; right: 48px;
+    display: flex;
+    gap: 40px;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .stat {
+    text-align: center;
+    border-left: 2px solid rgba(66, 165, 245, 0.2);
+    padding-left: 24px;
+  }
+
+  .stat-number {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .stat-number em {
+    color: var(--red);
+    font-style: normal;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+  }
+
+  /* ─── SERVICES ────────────────────────────────── */
+  .services {
+    padding: 100px 48px;
+    background: var(--white);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--blue-deep);
+    line-height: 1;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .card {
+    background: var(--off-white);
+    border-radius: 12px;
+    padding: 40px 36px;
+    border: 1px solid var(--gray-light);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue-bright), var(--blue-accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(13, 59, 110, 0.12);
+    border-color: rgba(66, 165, 245, 0.3);
+  }
+
+  .card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .card-icon {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, var(--blue-bright), var(--blue-light));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+
+  .card:last-child .card-icon {
+    background: linear-gradient(135deg, var(--red), var(--red-light));
+  }
+
+  .card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--blue-deep);
+    margin-bottom: 12px;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4a6278;
+  }
+
+  /* ─── WHY US STRIP ────────────────────────────── */
+  .strip {
+    background: var(--blue-mid);
+    padding: 60px 48px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+  }
+
+  .strip-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--white);
+  }
+
+  .strip-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+
+  .strip-text strong {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .strip-text span {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ─── FOOTER ──────────────────────────────────── */
+  footer {
+    background: var(--blue-deep);
+    padding: 64px 48px 32px;
+    color: var(--text-muted);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand .brand-name {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .footer-brand p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    max-width: 280px;
+  }
+
+  .footer-col h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blue-accent);
+    margin-bottom: 20px;
+  }
+
+  .footer-col p, .footer-col a {
+    font-size: 0.9rem;
+    line-height: 2;
+    display: block;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover {
+    color: var(--white);
+  }
+
+  .footer-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.07);
+    margin-bottom: 24px;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .footer-bottom .red-dot {
+    color: var(--red);
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .navbar { padding: 0 20px; }
+    .hero { padding: 100px 24px 160px; }
+    .hero-stats { position: static; margin-top: 48px; flex-wrap: wrap; gap: 24px; }
+    .services { padding: 60px 24px; }
+    .strip { padding: 40px 24px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    footer { padding: 48px 24px 24px; }
+    .section-header { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <a href="index.html" class="navbar-brand">
+    <div class="brand-icon">❄️</div>
+    <span class="brand-name">Klima <span>Technik</span></span>
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="termin.html" class="btn-nav">Termin buchen</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-red"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Traun & Umgebung · Seit 2025</div>
+    <h1>Moderne<br><span class="highlight">Klima</span> &<br>Kälte­technik</h1>
+    <p class="hero-sub">Installation <span>•</span> Wartung <span>•</span> Reparatur</p>
+    <div class="hero-cta">
+      <a class="btn-primary" href="termin.html">
+        📅 Termin vereinbaren
+      </a>
+      <a class="btn-secondary" href="#leistungen">
+        Unsere Leistungen →
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-number">20<em>+</em></div>
+      <div class="stat-label">Jahre Erfahrung</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">500<em>+</em></div>
+      <div class="stat-label">Projekte</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">24<em>h</em></div>
+      <div class="stat-label">Notdienst</div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-item">
+    <div class="strip-icon">⚡</div>
+    <div class="strip-text">
+      <strong>Schnelle Reaktionszeit</strong>
+      <span>Innerhalb 24 Stunden vor Ort</span>
+    </div>
+  </div>
+  <div class="strip-item">
+    <div class="strip-icon">🏅</div>
+    <div class="strip-text">
+      <strong>Zertifizierte Techniker</strong>
+      <span>Geprüfte Fachkräfte</span>
+    </div>
+  </div>
+  <div class="strip-item">
+    <div class="strip-icon">🔧</div>
+    <div class="strip-text">
+      <strong>Alle Fabrikate</strong>
+      <span>Herstellerunabhängiger Service</span>
+    </div>
+  </div>
+  <div class="strip-item">
+    <div class="strip-icon">📋</div>
+    <div class="strip-text">
+      <strong>Wartungsverträge</strong>
+      <span>Rundum-Sorglos-Pakete</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="leistungen">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Was wir anbieten</div>
+      <h2 class="section-title">Unsere<br>Leistungen</h2>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">❄️</div>
+      <h3>Klimaanlagen</h3>
+      <p>Professionelle Montage, Inbetriebnahme und regelmäßige Wartung modernster Klimasysteme für Privat und Gewerbe.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏭</div>
+      <h3>Kältetechnik</h3>
+      <p>Planung und Installation gewerblicher Kühlanlagen für Gastronomie, Lebensmittelhandel und Industrie.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🚨</div>
+      <h3>24h Notdienst</h3>
+      <p>Rund um die Uhr erreichbar bei Störungen und Ausfällen. Schnelle Hilfe, wenn Sie uns am dringendsten brauchen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="brand-name">Klima <span style="color:var(--blue-accent)">Technik</span></span>
+      <p>Ihr zuverlässiger Partner für Klimaanlagen und Kältetechnik in Wien und Umgebung. Qualität und Service seit über 20 Jahren.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="index.html">Startseite</a>
+      <a href="termin.html">Termin buchen</a>
+      <a href="impressum.html">Impressum</a>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <p><br>1010 Wien, Österreich</p>
+      <p style="margin-top:8px">
+        <a href="tel:+43123456789">+43 123 456 789</a>
+        <a href="mailto:office@muster.at">office@muster.at</a>
+      </p>
+      <p style="margin-top:8px; font-size:0.85rem">GF: Max Muster</p>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">
+    <span>© Dual Klima & Kältetechnick GmbH · Alle Rechte vorbehalten</span>
+    <span>Gebaut mit <span class="red-dot">♥</span> in Traun</span>
+  </div>
+</footer>
+    
+</body>
+</html>
