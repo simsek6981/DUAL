@@ -1,285 +1,256 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Impressum – Klima Technik Muster GmbH</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
+  <title>Impressum – DUAL Kälte- und Klimatechnik GmbH</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <a href="index.html" class="navbar-brand">
-      <div class="brand-icon">❄️</div>
-      <span class="brand-name">DUAL <span>Kälte- und Klimatechnik</span></span>
-    </a>
-    <nav>
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <a href="index.html" class="navbar-brand">
+    <div class="brand-mark">
+      <svg viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="#0057FF"/><path d="M18 7v22M11 11l7 7 7-7M11 25l7-7 7 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="brand-text">
+      <span class="brand-name">DUAL</span>
+      <span class="brand-sub">Kälte- und Klimatechnik</span>
+    </div>
+  </a>
+  <nav class="nav-links">
+    <a href="index.html" class="nav-link">Startseite</a>
+    <a href="leistungen.html" class="nav-link">Leistungen</a>
+    <a href="ueber-uns.html" class="nav-link">Über Uns</a>
+    <a href="termin.html" class="nav-link">Kontakt</a>
+    <a href="termin.html" class="btn-book">Termin buchen</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Startseite</a>
+  <a href="leistungen.html">Leistungen</a>
+  <a href="ueber-uns.html">Über Uns</a>
+  <a href="termin.html">Kontakt</a>
+  <a href="termin.html" class="btn-book">Termin buchen</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-glow"></div>
+  <div class="page-header-content">
+    <div class="breadcrumb">
       <a href="index.html">Home</a>
-      <a href="impressum.html" class="active">Impressum</a>
-      <a href="termin.html" class="btn-nav">Termin buchen</a>
-    </nav>
-  </header>
-
-  <!-- PAGE HEADER -->
-  <div class="page-header">
-    <div class="page-header-bg"></div>
-    <div class="page-header-glow"></div>
-    <div class="page-header-content">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span class="sep">›</span>
-        <span>Impressum</span>
-      </div>
-      <h1>Impressum &<br><span>Offenlegung</span></h1>
-      <p>Pflichtangaben gemäß ECG, UGB/GewO und Mediengesetz.</p>
+      <span class="sep">›</span>
+      <span>Impressum</span>
     </div>
+    <h1>Impressum &<br><em>Offenlegung</em></h1>
+    <p>Pflichtangaben gemäß ECG, UGB/GewO und Mediengesetz.</p>
   </div>
+</div>
 
-  <!-- IMPRESSUM CONTENT -->
-  <div class="impressum-layout">
+<!-- IMPRESSUM CONTENT -->
+<div class="impressum-layout">
 
-    <div class="impressum-main">
+  <div class="impressum-main">
 
-      <!-- Firmendaten -->
-      <div class="impressum-card">
-        <div class="impressum-card-label">Unternehmensangaben</div>
-        <h2 class="impressum-card-title">Impressum</h2>
-        <div class="impressum-grid">
-
-          <div class="impressum-row">
-            <span class="impressum-key">Firmawortlaut</span>
-            <span class="impressum-val">
-              DUAL Kälte- und Klimatechnik GmbH<br>
-              <small style="color:var(--text-muted);font-size:0.8rem;">
-                Gesellschaft mit beschränkter Haftung
-              </small>
-            </span>
-          </div>
-
-          <div class="impressum-row">
-            <span class="impressum-key">Unternehmensgegenstand</span>
-            <span class="impressum-val">
-              Kälte- und Klimatechnik, Handel
-            </span>
-          </div>
-
-          <div class="impressum-row">
-            <span class="impressum-key">Firmenbuchnummer</span>
-            <span class="impressum-val">
-              FN 665507 m
-            </span>
-          </div>
-
-          <div class="impressum-row">
-            <span class="impressum-key">Firmenbuchgericht</span>
-            <span class="impressum-val">
-              Landesgericht Linz
-            </span>
-          </div>
-
-          <div class="impressum-row">
-            <span class="impressum-key">Firmensitz</span>
-            <span class="impressum-val">
-              4050 Traun, Österreich
-            </span>
-          </div>
-
-          <div class="impressum-row">
-            <span class="impressum-key">Adresse</span>
-            <span class="impressum-val">
-              Obereggerstraße 16 / Gebäude 1<br>
-              4050 Traun<br>
-              Österreich
-            </span>
-          </div>
-
-          <div class="impressum-row">
-            <span class="impressum-key">Geschäftsführer</span>
-            <span class="impressum-val">
-              Omar Ahmad (alleinvertretungsberechtigt)
-            </span>
-          </div>
-
-          <div class="impressum-row">
-            <span class="impressum-key">Gesellschafter</span>
-            <span class="impressum-val">
-              Omar Ahmad – 100 %
-            </span>
-          </div>
-
-          <div class="impressum-row">
-            <span class="impressum-key">Beginn der Rechtsform</span>
-            <span class="impressum-val">
-              20.10.2025
-            </span>
-          </div>
-
-          <div class="impressum-row">
-            <span class="impressum-key">Telefon</span>
-            <span class="impressum-val">
-              <a href="tel:+436602826586">+43 660 2826586</a>
-            </span>
-          </div>
-
-          <div class="impressum-row">
-            <span class="impressum-key">E-Mail</span>
-            <span class="impressum-val">
-              <a href="mailto:office@dual-klima.at">office@dual-kälte-klimatechnik.at</a>
-            </span>
-          </div>
-
+    <!-- Firmendaten -->
+    <div class="impressum-card">
+      <div class="impressum-card-label">Unternehmensangaben</div>
+      <h2 class="impressum-card-title">Impressum</h2>
+      <div class="impressum-grid">
+        <div class="impressum-row">
+          <span class="impressum-key">Firmawortlaut</span>
+          <span class="impressum-val">
+            DUAL Kälte- und Klimatechnik GmbH<br>
+            <small style="color:var(--gray-400);font-size:.78rem">Gesellschaft mit beschränkter Haftung</small>
+          </span>
+        </div>
+        <div class="impressum-row">
+          <span class="impressum-key">Unternehmensgegenstand</span>
+          <span class="impressum-val">Kälte- und Klimatechnik, Handel</span>
+        </div>
+        <div class="impressum-row">
+          <span class="impressum-key">Firmenbuchnummer</span>
+          <span class="impressum-val">FN 665507 m</span>
+        </div>
+        <div class="impressum-row">
+          <span class="impressum-key">Firmenbuchgericht</span>
+          <span class="impressum-val">Landesgericht Linz</span>
+        </div>
+        <div class="impressum-row">
+          <span class="impressum-key">Firmensitz</span>
+          <span class="impressum-val">4050 Traun, Österreich</span>
+        </div>
+        <div class="impressum-row">
+          <span class="impressum-key">Adresse</span>
+          <span class="impressum-val">
+            Obereggerstraße 16 / Gebäude 1<br>
+            4050 Traun<br>
+            Österreich
+          </span>
+        </div>
+        <div class="impressum-row">
+          <span class="impressum-key">Geschäftsführer</span>
+          <span class="impressum-val">Omar Ahmad (alleinvertretungsberechtigt)</span>
+        </div>
+        <div class="impressum-row">
+          <span class="impressum-key">Gesellschafter</span>
+          <span class="impressum-val">Omar Ahmad – 100 %</span>
+        </div>
+        <div class="impressum-row">
+          <span class="impressum-key">Beginn der Rechtsform</span>
+          <span class="impressum-val">20.10.2025</span>
+        </div>
+        <div class="impressum-row">
+          <span class="impressum-key">Telefon</span>
+          <span class="impressum-val"><a href="tel:+436602826586">+43 660 2826586</a></span>
+        </div>
+        <div class="impressum-row">
+          <span class="impressum-key">E-Mail</span>
+          <span class="impressum-val"><a href="mailto:office@dual-klima.at">office@dual-kaelte.at</a></span>
         </div>
       </div>
-
-      <!-- Kammer & Berufsrecht -->
-      <div class="impressum-card">
-        <div class="impressum-card-label">Berufsrecht & Kammer</div>
-        <h2 class="impressum-card-title">Mitgliedschaften & Vorschriften</h2>
-        <div class="impressum-grid">
-
-          <div class="impressum-row">
-            <span class="impressum-key">Mitgliedschaften</span>
-            <span class="impressum-val">Mitglied der WKÖ, WK Wien,<br>Landesinnung Wien der
-              Mechatroniker,<br>Bundesinnung der Mechatroniker</span>
-          </div>
-
-          <div class="impressum-row">
-            <span class="impressum-key">Berufsrecht</span>
-            <span class="impressum-val">
-              Gewerbeordnung (GewO 1994):<br>
-              <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener">www.ris.bka.gv.at</a>
-            </span>
-          </div>
-
-          <div class="impressum-row">
-            <span class="impressum-key">Aufsichtsbehörde</span>
-            <span class="impressum-val">Magistrat der Stadt Wien,<br>MA 63 – Gewerberechtsbehörde</span>
-          </div>
-
-          <div class="impressum-row">
-            <span class="impressum-key">Berufsbezeichnung</span>
-            <span class="impressum-val">Meisterbetrieb</span>
-          </div>
-
-          <div class="impressum-row">
-            <span class="impressum-key">Verleihungsstaat</span>
-            <span class="impressum-val">Meisterprüfung abgelegt in Österreich</span>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Offenlegung nach Mediengesetz -->
-      <div class="impressum-card">
-        <div class="impressum-card-label">§ 25 Mediengesetz</div>
-        <h2 class="impressum-card-title">Offenlegung</h2>
-        <div class="impressum-grid">
-
-          <div class="impressum-row">
-            <span class="impressum-key">Medieninhaber</span>
-            <span class="impressum-val">Klima Technik Muster GmbH</span>
-          </div>
-
-          <div class="impressum-row">
-            <span class="impressum-key">Sitz des Medieninhabers</span>
-            <span class="impressum-val">1010 Wien, Österreich</span>
-          </div>
-
-          <div class="impressum-row">
-            <span class="impressum-key">Art der Website</span>
-            <span class="impressum-val">Kleine Website gemäß § 25 Abs. 5 MedienG –<br>reine Unternehmenspräsentation
-              ohne meinungsbildende Inhalte</span>
-          </div>
-
-          <div class="impressum-row">
-            <span class="impressum-key">Zweck</span>
-            <span class="impressum-val">Präsentation des Unternehmens und seiner Dienstleistungen im Bereich Kälte- und
-              Klimatechnik</span>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Haftung & Datenschutz -->
-      <div class="impressum-card">
-        <div class="impressum-card-label">Rechtliches</div>
-        <h2 class="impressum-card-title">Haftung & Datenschutz</h2>
-        <div class="impressum-text">
-          <p><strong>Haftungsausschluss:</strong> Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt
-            erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir jedoch keine
-            Gewähr. Als Diensteanbieter sind wir gemäß § 17 ECG für eigene Inhalte auf diesen Seiten verantwortlich.</p>
-          <p><strong>Externe Links:</strong> Unsere Website enthält Links zu externen Websites Dritter, auf deren
-            Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter
-            verantwortlich.</p>
-          <p><strong>Datenschutz:</strong> Personenbezogene Daten (z. B. im Rahmen der Terminbuchung) werden
-            ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben. Sie haben
-            jederzeit das Recht auf Auskunft, Berichtigung und Löschung Ihrer Daten. Anfragen bitte an: <a
-              href="mailto:office@muster.at">office@muster.at</a></p>
-          <p><strong>EU-Streitschlichtung:</strong> Die Europäische Kommission stellt eine Plattform zur
-            Online-Streitbeilegung bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank"
-              rel="noopener">ec.europa.eu/consumers/odr</a>. Wir sind nicht verpflichtet, an einem
-            Streitbeilegungsverfahren teilzunehmen.</p>
-        </div>
-      </div>
-
     </div>
 
-    <!-- SIDEBAR -->
-    <div class="impressum-sidebar">
-
-      <div class="info-card">
-        <div class="info-card-header">
-          <h3>Auf einen Blick</h3>
+    <!-- Kammer & Berufsrecht -->
+    <div class="impressum-card">
+      <div class="impressum-card-label">Berufsrecht & Kammer</div>
+      <h2 class="impressum-card-title">Mitgliedschaften & Vorschriften</h2>
+      <div class="impressum-grid">
+        <div class="impressum-row">
+          <span class="impressum-key">Mitgliedschaften</span>
+          <span class="impressum-val">
+            Mitglied der WKÖ, WK Wien<br>
+            Landesinnung Wien der Mechatroniker<br>
+            Bundesinnung der Mechatroniker
+          </span>
         </div>
-        <div class="info-card-body">
-          <div class="info-item">
-            <div class="info-item-icon">🏢</div>
-            <div><strong>DUAL Kälte- und Klimatechnik GmbH</strong><span>FN 665507 m</span></div>
-          </div>
-          <div class="info-item">
-            <div class="info-item-icon">📍</div>
-            <div><strong>Adresse</strong><span>Obereggerstraße 16/Gebäude 1, 4050 Traun</span></div>
-          </div>
-          <div class="info-item">
-            <div class="info-item-icon">📞</div>
-            <div><strong>Telefon</strong><span>+43 660 2826586</span></div>
-          </div>
-          <div class="info-item">
-            <div class="info-item-icon">📧</div>
-            <div><strong>E-Mail</strong><span>office@muster.at</span></div>
-          </div>
-          <div class="info-item">
-            <div class="info-item-icon">🔢</div>
-            <div><strong>UID-Nummer</strong><span>ATU 12345678</span></div>
-          </div>
-          <div class="info-item">
-            <div class="info-item-icon">📋</div>
-            <div><strong>FN</strong><span>665507 m</span></div>
-          </div>
+        <div class="impressum-row">
+          <span class="impressum-key">Berufsrecht</span>
+          <span class="impressum-val">
+            Gewerbeordnung (GewO 1994):<br>
+            <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener">www.ris.bka.gv.at</a>
+          </span>
+        </div>
+        <div class="impressum-row">
+          <span class="impressum-key">Aufsichtsbehörde</span>
+          <span class="impressum-val">
+            Magistrat der Stadt Wien<br>
+            MA 63 – Gewerberechtsbehörde
+          </span>
+        </div>
+        <div class="impressum-row">
+          <span class="impressum-key">Berufsbezeichnung</span>
+          <span class="impressum-val">Meisterbetrieb</span>
+        </div>
+        <div class="impressum-row">
+          <span class="impressum-key">Verleihungsstaat</span>
+          <span class="impressum-val">Meisterprüfung abgelegt in Österreich</span>
         </div>
       </div>
+    </div>
 
+    <!-- Offenlegung nach Mediengesetz -->
+    <div class="impressum-card">
+      <div class="impressum-card-label">§ 25 Mediengesetz</div>
+      <h2 class="impressum-card-title">Offenlegung</h2>
+      <div class="impressum-grid">
+        <div class="impressum-row">
+          <span class="impressum-key">Medieninhaber</span>
+          <span class="impressum-val">DUAL Kälte- und Klimatechnik GmbH</span>
+        </div>
+        <div class="impressum-row">
+          <span class="impressum-key">Sitz des Medieninhabers</span>
+          <span class="impressum-val">4050 Traun, Österreich</span>
+        </div>
+        <div class="impressum-row">
+          <span class="impressum-key">Art der Website</span>
+          <span class="impressum-val">
+            Kleine Website gemäß § 25 Abs. 5 MedienG –<br>
+            reine Unternehmenspräsentation ohne meinungsbildende Inhalte
+          </span>
+        </div>
+        <div class="impressum-row">
+          <span class="impressum-key">Zweck</span>
+          <span class="impressum-val">Präsentation des Unternehmens und seiner Dienstleistungen im Bereich Kälte- und Klimatechnik</span>
+        </div>
+      </div>
+    </div>
 
-
+    <!-- Haftung & Datenschutz -->
+    <div class="impressum-card">
+      <div class="impressum-card-label">Rechtliches</div>
+      <h2 class="impressum-card-title">Haftung & Datenschutz</h2>
+      <div class="impressum-text">
+        <p><strong>Haftungsausschluss:</strong> Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität übernehmen wir jedoch keine Gewähr. Als Diensteanbieter sind wir gemäß § 17 ECG für eigene Inhalte auf diesen Seiten verantwortlich.</p>
+        <p><strong>Externe Links:</strong> Unsere Website enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte verlinkter Seiten ist stets der jeweilige Anbieter verantwortlich.</p>
+        <p><strong>Datenschutz:</strong> Personenbezogene Daten (z. B. im Rahmen der Terminbuchung) werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben. Sie haben jederzeit das Recht auf Auskunft, Berichtigung und Löschung Ihrer Daten. Anfragen an: <a href="mailto:office@dual-klima.at">office@dual-klima.at</a></p>
+        <p><strong>EU-Streitschlichtung:</strong> Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. Wir sind nicht verpflichtet, an einem Streitbeilegungsverfahren teilzunehmen.</p>
+      </div>
     </div>
 
   </div>
 
-  <!-- FOOTER -->
-  <footer class="footer-termin">
-    <p>© DUAL Kälte- und Klimatechnik GmbH · Alle Rechte vorbehalten</p>
-    <div class="footer-termin-links">
-      <a href="index.html">Startseite</a>
-      <a href="termin.html">Termin buchen</a>
+  <!-- SIDEBAR -->
+  <div class="impressum-sidebar">
+    <div class="info-card">
+      <div class="info-card-header"><h3>Auf einen Blick</h3></div>
+      <div class="info-card-body">
+        <div class="info-item">
+          <div class="info-item-icon">🏢</div>
+          <div>
+            <strong>DUAL Kälte- und Klimatechnik GmbH</strong>
+            <span>FN 665507 m</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-icon">📍</div>
+          <div>
+            <strong>Adresse</strong>
+            <span>Obereggerstraße 16/Geb. 1<br>4050 Traun</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-icon">📞</div>
+          <div>
+            <strong>Telefon</strong>
+            <a href="tel:+436602826586">+43 660 2826586</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-icon">📧</div>
+          <div>
+            <strong>E-Mail</strong>
+            <a href="mailto:office@dual-klima.at">office@dual-klima.at</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-icon">🔢</div>
+          <div>
+            <strong>UID-Nummer</strong>
+            <span>ATU 12345678 (Platzhalter)</span>
+          </div>
+        </div>
+      </div>
     </div>
-  </footer>
+  </div>
 
+</div>
+
+<!-- FOOTER -->
+<footer class="footer-termin">
+  <p>© 2025 DUAL Kälte- und Klimatechnik GmbH · FN 665507 m · Alle Rechte vorbehalten</p>
+  <div class="footer-termin-links">
+    <a href="index.html">Startseite</a>
+    <a href="termin.html">Termin buchen</a>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
 </body>
-
 </html>
