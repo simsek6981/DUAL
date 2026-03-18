@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Termin buchen – Klima Technik Muster GmbH</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Termin buchen – DUAL Kälte- und Klimatechnik GmbH</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header class="navbar">
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
   <a href="index.html" class="navbar-brand">
-    <div class="brand-icon">❄️</div>
-    <span class="brand-name">DUAL <span>Kälte- und Klimatechnik</span></span>
+    <div class="brand-mark">
+      <svg viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="#0057FF"/><path d="M18 7v22M11 11l7 7 7-7M11 25l7-7 7 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="brand-text">
+      <span class="brand-name">DUAL</span>
+      <span class="brand-sub">Kälte- und Klimatechnik</span>
+    </div>
   </a>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="impressum.html">Impressum</a>
-    <a href="termin.html" class="btn-nav active">Termin buchen</a>
+  <nav class="nav-links">
+    <a href="index.html" class="nav-link">Startseite</a>
+    <a href="leistungen.html" class="nav-link">Leistungen</a>
+    <a href="ueber-uns.html" class="nav-link">Über Uns</a>
+    <a href="termin.html" class="nav-link active">Kontakt</a>
+    <a href="termin.html" class="btn-book">Termin buchen</a>
   </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Startseite</a>
+  <a href="leistungen.html">Leistungen</a>
+  <a href="ueber-uns.html">Über Uns</a>
+  <a href="termin.html">Kontakt</a>
+  <a href="termin.html" class="btn-book">Termin buchen</a>
+</div>
 
+<!-- PAGE HEADER -->
 <div class="page-header">
-  <div class="page-header-bg"></div>
   <div class="page-header-glow"></div>
   <div class="page-header-content">
     <div class="breadcrumb">
@@ -30,100 +48,168 @@
       <span class="sep">›</span>
       <span>Termin buchen</span>
     </div>
-    <h1>Termin<br><span>Vereinbaren</span></h1>
+    <h1>Termin<br><em>Vereinbaren</em></h1>
     <p>Buchen Sie Ihren Termin bequem online – wir kümmern uns um den Rest.</p>
   </div>
 </div>
 
+<!-- BOOKING LAYOUT -->
 <div class="booking-layout">
+
+  <!-- MAIN FORM -->
   <div>
-    <div class="steps">
-      <div class="step active" id="step-1" onclick="goStep(1)"><div class="step-num">1</div><div class="step-label">Leistung</div></div>
-      <div class="step" id="step-2" onclick="goStep(2)"><div class="step-num">2</div><div class="step-label">Datum & Zeit</div></div>
-      <div class="step" id="step-3" onclick="goStep(3)"><div class="step-num">3</div><div class="step-label">Kontakt</div></div>
+    <div class="steps" id="steps-bar">
+      <div class="step active" id="step-1" onclick="goStep(1)">
+        <div class="step-num">1</div>
+        <div class="step-label">Leistung</div>
+      </div>
+      <div class="step" id="step-2" onclick="goStep(2)">
+        <div class="step-num">2</div>
+        <div class="step-label">Datum & Zeit</div>
+      </div>
+      <div class="step" id="step-3" onclick="goStep(3)">
+        <div class="step-num">3</div>
+        <div class="step-label">Kontakt</div>
+      </div>
     </div>
 
     <div class="form-card">
 
-      <!-- STEP 1 -->
+      <!-- STEP 1 – Service selection -->
       <div class="form-section visible" id="section-1">
         <div class="form-section-title">Welche Leistung benötigen Sie?</div>
         <div class="form-section-sub">Bitte wählen Sie den passenden Service für Ihr Anliegen.</div>
         <div class="service-grid">
-          <div><input type="radio" name="service" id="svc-installation" value="Klimaanlage Installation" class="service-option"><label for="svc-installation" class="service-label"><div class="svc-icon">❄️</div><div class="svc-info"><strong>Klimaanlage Installation</strong><span>Neu-Montage & Inbetriebnahme</span></div></label></div>
-          <div><input type="radio" name="service" id="svc-wartung" value="Wartung & Service" class="service-option"><label for="svc-wartung" class="service-label"><div class="svc-icon">🔧</div><div class="svc-info"><strong>Wartung & Service</strong><span>Jährliche Inspektion & Reinigung</span></div></label></div>
-          <div><input type="radio" name="service" id="svc-reparatur" value="Reparatur" class="service-option"><label for="svc-reparatur" class="service-label"><div class="svc-icon">⚙️</div><div class="svc-info"><strong>Reparatur</strong><span>Störungsbeseitigung & Fehlerdiagnose</span></div></label></div>
-          <div><input type="radio" name="service" id="svc-kaelte" value="Kältetechnik" class="service-option"><label for="svc-kaelte" class="service-label"><div class="svc-icon">🏭</div><div class="svc-info"><strong>Kältetechnik</strong><span>Gewerbliche Kühlanlagen</span></div></label></div>
-          <div><input type="radio" name="service" id="svc-beratung" value="Beratung" class="service-option"><label for="svc-beratung" class="service-label"><div class="svc-icon">💬</div><div class="svc-info"><strong>Kostenlose Beratung</strong><span>Planung & Angebotserstellung</span></div></label></div>
-          <div><input type="radio" name="service" id="svc-sonstiges" value="Sonstiges" class="service-option"><label for="svc-sonstiges" class="service-label"><div class="svc-icon">📋</div><div class="svc-info"><strong>Sonstiges</strong><span>Andere Anfragen & Anliegen</span></div></label></div>
+          <div>
+            <input type="radio" name="service" id="svc-klima" value="Klimaanlage Installation" class="service-option">
+            <label for="svc-klima" class="service-label">
+              <div class="svc-icon">❄️</div>
+              <div class="svc-info"><strong>Klimaanlage Installation</strong><span>Neu-Montage & Inbetriebnahme</span></div>
+            </label>
+          </div>
+          <div>
+            <input type="radio" name="service" id="svc-wartung" value="Wartung & Service" class="service-option">
+            <label for="svc-wartung" class="service-label">
+              <div class="svc-icon">🔧</div>
+              <div class="svc-info"><strong>Wartung & Service</strong><span>Inspektion & Reinigung</span></div>
+            </label>
+          </div>
+          <div>
+            <input type="radio" name="service" id="svc-reparatur" value="Reparatur / Störung" class="service-option">
+            <label for="svc-reparatur" class="service-label">
+              <div class="svc-icon">⚙️</div>
+              <div class="svc-info"><strong>Reparatur / Störung</strong><span>Fehlerdiagnose & Behebung</span></div>
+            </label>
+          </div>
+          <div>
+            <input type="radio" name="service" id="svc-kuehl" value="Kühlanlagen (Kältetechnik)" class="service-option">
+            <label for="svc-kuehl" class="service-label">
+              <div class="svc-icon">🏭</div>
+              <div class="svc-info"><strong>Kühlanlagen</strong><span>Kühlzelle, Kühlpult, Verbund</span></div>
+            </label>
+          </div>
+          <div>
+            <input type="radio" name="service" id="svc-waerme" value="Wärmepumpe" class="service-option">
+            <label for="svc-waerme" class="service-label">
+              <div class="svc-icon">🌡️</div>
+              <div class="svc-info"><strong>Wärmepumpe</strong><span>Planung & Installation</span></div>
+            </label>
+          </div>
+          <div>
+            <input type="radio" name="service" id="svc-beratung" value="Kostenlose Beratung" class="service-option">
+            <label for="svc-beratung" class="service-label">
+              <div class="svc-icon">💬</div>
+              <div class="svc-info"><strong>Sonderlösungen</strong><span>Individuelle Planung</span></div>
+            </label>
+          </div>
         </div>
       </div>
 
-      <!-- STEP 2 -->
+      <!-- STEP 2 – Date & Time -->
       <div class="form-section" id="section-2">
         <div class="form-section-title">Wunschtermin wählen</div>
-        <div class="form-section-sub">Verfügbare Termine werden markiert. Rote Punkte = letzte freie Plätze.</div>
+        <div class="form-section-sub">Grüne Punkte = verfügbar · Rote Punkte = letzte freie Plätze</div>
         <div class="calendar-wrap">
           <div class="cal-nav">
-            <button onclick="prevMonth()">‹</button>
+            <button onclick="prevMonth()" aria-label="Vorheriger Monat">‹</button>
             <div class="cal-month" id="cal-month-label"></div>
-            <button onclick="nextMonth()">›</button>
+            <button onclick="nextMonth()" aria-label="Nächster Monat">›</button>
           </div>
           <div class="cal-grid" id="cal-grid"></div>
         </div>
         <div class="slots-title">Verfügbare Uhrzeiten</div>
         <div class="slots-grid" id="slots-grid">
-          <div style="grid-column:1/-1;color:var(--text-muted);font-size:.88rem;padding:8px 0">Bitte wählen Sie zuerst ein Datum.</div>
+          <div style="grid-column:1/-1;color:var(--gray-400);font-size:.85rem;padding:8px 0">Bitte wählen Sie zuerst ein Datum.</div>
         </div>
       </div>
 
-      <!-- STEP 3 -->
+      <!-- STEP 3 – Contact -->
       <div class="form-section" id="section-3">
         <div class="form-section-title">Ihre Kontaktdaten</div>
-        <div class="form-section-sub">Alle mit <span style="color:var(--red)">*</span> markierten Felder sind Pflichtfelder.</div>
+        <div class="form-section-sub">Felder mit <span style="color:var(--red)">*</span> sind Pflichtfelder.</div>
         <div class="form-row">
-          <div class="form-group"><label>Vorname <span class="req">*</span></label><input type="text" id="fname" placeholder="Max" required></div>
-          <div class="form-group"><label>Nachname <span class="req">*</span></label><input type="text" id="lname" placeholder="Muster" required></div>
+          <div class="form-group">
+            <label>Vorname <span class="req">*</span></label>
+            <input type="text" id="fname" placeholder="Max" required>
+          </div>
+          <div class="form-group">
+            <label>Nachname <span class="req">*</span></label>
+            <input type="text" id="lname" placeholder="Mustermann" required>
+          </div>
         </div>
         <div class="form-row">
-          <div class="form-group"><label>Telefon <span class="req">*</span></label><input type="tel" id="phone" placeholder="+43 123 456 789" required></div>
-          <div class="form-group"><label>E-Mail <span class="req">*</span></label><input type="email" id="email" placeholder="max@muster.at" required></div>
+          <div class="form-group">
+            <label>Telefon <span class="req">*</span></label>
+            <input type="tel" id="phone" placeholder="+43 660 XXXXXXX" required>
+          </div>
+          <div class="form-group">
+            <label>E-Mail <span class="req">*</span></label>
+            <input type="email" id="email" placeholder="max@muster.at" required>
+          </div>
         </div>
-        <div class="form-group"><label>Adresse (Einsatzort) <span class="req">*</span></label><input type="text" id="address" placeholder="Musterstraße 1, 1010 Wien" required></div>
+        <div class="form-group">
+          <label>Adresse (Einsatzort) <span class="req">*</span></label>
+          <input type="text" id="address" placeholder="Musterstraße 1, 4050 Traun" required>
+        </div>
         <div class="form-group">
           <label>Objekttyp</label>
           <select id="objtype">
             <option value="">Bitte wählen...</option>
-            <option>Privatwohnung</option>
-            <option>Einfamilienhaus</option>
+            <option>Privatwohnung / Haus</option>
             <option>Büro / Gewerbe</option>
-            <option>Gastronomie</option>
-            <option>Industriebetrieb</option>
+            <option>Gastronomie / Restaurant</option>
+            <option>Supermarkt / Handel</option>
             <option>Sonstiges</option>
           </select>
         </div>
-        <div class="form-group"><label>Nachricht / Anmerkungen</label><textarea id="message" placeholder="Beschreiben Sie kurz Ihr Anliegen, z. B. Störungsbild, Anlagentyp, etc."></textarea></div>
+        <div class="form-group">
+          <label>Nachricht / Anmerkungen</label>
+          <textarea id="message" placeholder="Beschreiben Sie kurz Ihr Anliegen, z. B. Anlagentyp, Störungsbild, Raumgröße etc."></textarea>
+        </div>
         <div class="privacy-row">
           <input type="checkbox" id="privacy">
-          <label for="privacy">Ich stimme der Verarbeitung meiner Daten gemäß der <a href="impressum.html">Datenschutzerklärung</a> zu. Meine Daten werden ausschließlich zur Terminbearbeitung verwendet und nicht an Dritte weitergegeben. <span class="req">*</span></label>
+          <label for="privacy">
+            Ich stimme der Verarbeitung meiner Daten gemäß der <a href="impressum.html">Datenschutzerklärung</a> zu. Meine Daten werden ausschließlich zur Bearbeitung meiner Terminanfrage verwendet und nicht an Dritte weitergegeben. <span class="req">*</span>
+          </label>
         </div>
       </div>
 
       <!-- SUCCESS -->
       <div class="success-view" id="success-view">
         <div class="success-icon">✓</div>
-        <h2>Termin bestätigt!</h2>
-        <p>Vielen Dank! Ihre Terminanfrage wurde erfolgreich übermittelt. Wir werden uns so bald wie möglich bei Ihnen melden.</p>
+        <h2>Anfrage erhalten!</h2>
+        <p>Vielen Dank für Ihre Terminanfrage. Wir werden uns so bald wie möglich bei Ihnen melden – in der Regel innerhalb eines Werktages.</p>
         <div class="booking-ref" id="booking-ref">KT-000000</div>
-        <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--blue-bright);color:white;text-decoration:none;padding:14px 28px;border-radius:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:.08em;">← Zurück zur Startseite</a>
+        <a href="index.html" class="btn-primary">← Zurück zur Startseite</a>
       </div>
 
       <!-- ERROR -->
       <div class="error-view" id="error-view">
         <div class="error-icon">✕</div>
         <h2>Fehler beim Senden</h2>
-        <p>Leider ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt unter <a href="tel:+43123456789">+43 123 456 789</a>.</p>
-        <button onclick="resetError()" style="display:inline-flex;align-items:center;gap:8px;background:var(--blue-bright);color:white;border:none;padding:14px 28px;border-radius:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;">Erneut versuchen</button>
+        <p>Es ist leider ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt:</p>
+        <p style="margin-bottom:20px"><a href="tel:+436602826586" style="color:var(--blue);font-weight:700">+43 660 2826586</a></p>
+        <button onclick="resetError()" class="btn-primary">Erneut versuchen</button>
       </div>
 
       <div class="form-footer" id="form-footer">
@@ -133,142 +219,220 @@
     </div>
   </div>
 
+  <!-- SIDEBAR -->
   <div class="sidebar">
     <div class="info-card">
       <div class="info-card-header"><h3>Ihre Buchungsübersicht</h3></div>
       <div class="info-card-body">
-        <div class="summary-row"><span class="label">Leistung</span><span class="value empty" id="sum-service">Nicht gewählt</span></div>
-        <div class="summary-row"><span class="label">Datum</span><span class="value empty" id="sum-date">Nicht gewählt</span></div>
-        <div class="summary-row"><span class="label">Uhrzeit</span><span class="value empty" id="sum-time">Nicht gewählt</span></div>
-        <div class="summary-row"><span class="label">Kontakt</span><span class="value empty" id="sum-contact">Nicht gewählt</span></div>
+        <div class="summary-row">
+          <span class="label">Leistung</span>
+          <span class="value empty" id="sum-service">Nicht gewählt</span>
+        </div>
+        <div class="summary-row">
+          <span class="label">Datum</span>
+          <span class="value empty" id="sum-date">Nicht gewählt</span>
+        </div>
+        <div class="summary-row">
+          <span class="label">Uhrzeit</span>
+          <span class="value empty" id="sum-time">Nicht gewählt</span>
+        </div>
+        <div class="summary-row">
+          <span class="label">Kontakt</span>
+          <span class="value empty" id="sum-contact">Nicht gewählt</span>
+        </div>
       </div>
     </div>
+
     <div class="info-card">
-      <div class="info-card-header"><h3>Erreichbarkeit</h3></div>
+      <div class="info-card-header"><h3>Kontakt & Erreichbarkeit</h3></div>
       <div class="info-card-body">
-        <div class="info-item"><div class="info-item-icon">📍</div><div><strong>Büro Wien</strong><span>Obereggerstraße 16/Gebäude 1, 4050 Traun</span></div></div>
-        <div class="info-item"><div class="info-item-icon">📞</div><div><strong>Telefon</strong><span>+43 660 2826586</span></div></div>
-        <div class="info-item"><div class="info-item-icon">📧</div><div><strong>E-Mail</strong><span>office@muster.at</span></div></div>
-        <div class="info-item"><div class="info-item-icon">🕐</div><div><strong>Bürozeiten</strong><span>Mo–Fr: 08:00 – 17:00 Uhr</span></div></div>
+        <div class="info-item">
+          <div class="info-item-icon">📍</div>
+          <div>
+            <strong>Adresse</strong>
+            <span>Obereggerstraße 16 / Geb. 1<br>4050 Traun, Österreich</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-icon">📞</div>
+          <div>
+            <strong>Telefon</strong>
+            <a href="tel:+436602826586">+43 660 2826586</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-icon">📧</div>
+          <div>
+            <strong>E-Mail</strong>
+            <a href="/cdn-cgi/l/email-protection#076861616e6462476372666b2a6c6b6e6a66296673"><span class="__cf_email__" data-cfemail="b0dfd6d6d9d3d5f0d4c5d1dc9ddbdcd9ddd19ed1c4">[email&#160;protected]</span></a>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-icon">🕐</div>
+          <div>
+            <strong>Geschäftszeiten</strong>
+            <span>Mo–Fr: 07:00–18:00 Uhr<br>Notdienst: 24h, 7 Tage</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="urgency-card">
-      <h3>📞 Direkt anrufen</h3>
-      <p>Sie erreichen uns direkt telefonisch während unserer Bürozeiten.</p>
-      <a href="tel:+43123456789">📞 +43 660 2826586</a>
+
+    <!-- Emergency card -->
+    <div style="background:linear-gradient(135deg,var(--red),#C62828);border-radius:var(--radius-lg);padding:24px;color:white">
+      <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.75;margin-bottom:8px">Dringende Störung?</div>
+      <p style="font-size:.9rem;opacity:.85;line-height:1.5;margin-bottom:16px">Bei akuten Ausfällen sind wir rund um die Uhr für Sie erreichbar.</p>
+      <a href="tel:+436602826586" style="display:inline-flex;align-items:center;gap:8px;background:white;color:var(--red);font-weight:700;font-size:.95rem;padding:10px 18px;border-radius:8px;text-decoration:none;transition:all .2s">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Jetzt anrufen
+      </a>
     </div>
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer class="footer-termin">
-  <p>© DUAL Kälte- und Klimatechnik GmbH · Alle Rechte vorbehalten</p>
+  <p>© 2025 DUAL Kälte- und Klimatechnik GmbH · FN 665507 m · Alle Rechte vorbehalten</p>
   <div class="footer-termin-links">
     <a href="index.html">Startseite</a>
+    <a href="leistungen.html">Leistungen</a>
     <a href="impressum.html">Impressum</a>
   </div>
 </footer>
 
-<!-- EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-  // ── EmailJS KONFIGURATION ──────────────────────────────────────
-  emailjs.init('VaQ_PnlLN756oJY4H');
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="nav.js"></script>
+<script>
+  // ── EMAILJS CONFIG ────────────────────────────────────────────
+  const EMAILJS_PUBLIC_KEY  = 'VaQ_PnlLN756oJY4H';
   const EMAILJS_SERVICE_ID  = 'service_ja02fgi';
   const EMAILJS_TEMPLATE_ID = 'template_tk14gwp';
+  emailjs.init(EMAILJS_PUBLIC_KEY);
 
-  // ── STATE ─────────────────── ───────────────────────────────────
-  let currentStep = 1;
+  // ── BLOCKING LOGIC ────────────────────────────────────────────
+  // Heute + nächste 7 Werktage (≈1,5 Wochen) immer vorgebucht.
+  // Nach einer Buchung: Tag dauerhaft gesperrt (localStorage).
+  // Pro Tag nur EIN Termin-Slot → kein Stress.
+  const BLOCKED_KEY = 'dual_blocked_days';
+
+  function getBlockedDays() {
+    try { return JSON.parse(localStorage.getItem(BLOCKED_KEY) || '[]'); }
+    catch { return []; }
+  }
+  function blockDay(dateStr) {
+    const b = getBlockedDays();
+    if (!b.includes(dateStr)) { b.push(dateStr); localStorage.setItem(BLOCKED_KEY, JSON.stringify(b)); }
+  }
+  function toDateStr(y, m, d) {
+    return y + '-' + String(m + 1).padStart(2,'0') + '-' + String(d).padStart(2,'0');
+  }
+  function getPreBlockedSet() {
+    const s = new Set();
+    const today = new Date(); today.setHours(0,0,0,0);
+    s.add(toDateStr(today.getFullYear(), today.getMonth(), today.getDate()));
+    let count = 0, cur = new Date(today);
+    while (count < 7) {
+      cur = new Date(cur.getTime() + 86400000);
+      if (cur.getDay() !== 0 && cur.getDay() !== 6) {
+        s.add(toDateStr(cur.getFullYear(), cur.getMonth(), cur.getDate()));
+        count++;
+      }
+    }
+    return s;
+  }
+  function isDayBlocked(y, m, d) {
+    const ds = toDateStr(y, m, d);
+    return getPreBlockedSet().has(ds) || getBlockedDays().includes(ds);
+  }
+
+  // ── STATE ─────────────────────────────────────────────────────
+  let currentStep  = 1;
   let selectedDate = null;
   let selectedTime = null;
-  let calYear, calMonth;
-  const today = new Date();
-  calYear  = today.getFullYear();
-  calMonth = today.getMonth();
+  let calYear      = new Date().getFullYear();
+  let calMonth     = new Date().getMonth();
 
-  const fullSlots  = { 3: ['08:00','09:00'], 7: ['14:00'], 12: ['10:00','11:00','13:00'] };
-  const urgentDays = [5, 11, 19];
-  const timeSlots  = ['08:00','09:00','10:00','11:00','13:00','14:00','15:00','16:00'];
-  const monthNames = ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
-  const dowNames   = ['Mo','Di','Mi','Do','Fr','Sa','So'];
+  const MONTHS = ['Januar','Februar','März','April','Mai','Juni',
+                  'Juli','August','September','Oktober','November','Dezember'];
+  const DAYS   = ['Mo','Di','Mi','Do','Fr','Sa','So'];
+  const SLOT   = '08:00'; // Ein Termin pro Tag, Uhrzeit wird abgestimmt
 
-  // ── CALENDAR ───────────────────────────────────────────────────
+  // ── CALENDAR ──────────────────────────────────────────────────
   function renderCalendar() {
-    document.getElementById('cal-month-label').textContent = `${monthNames[calMonth]} ${calYear}`;
+    document.getElementById('cal-month-label').textContent = MONTHS[calMonth] + ' ' + calYear;
     const grid = document.getElementById('cal-grid');
     grid.innerHTML = '';
-    dowNames.forEach(d => {
+    DAYS.forEach(d => {
       const el = document.createElement('div');
-      el.className = 'cal-dow';
-      el.textContent = d;
+      el.className = 'cal-dow'; el.textContent = d;
       grid.appendChild(el);
     });
     const firstDay = new Date(calYear, calMonth, 1).getDay();
-    const offset = (firstDay === 0 ? 6 : firstDay - 1);
+    const offset   = (firstDay === 0) ? 6 : firstDay - 1;
     const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+    const today = new Date(); today.setHours(0,0,0,0);
+
     for (let i = 0; i < offset; i++) {
-      const el = document.createElement('div'); el.className = 'cal-day empty'; grid.appendChild(el);
+      const e = document.createElement('div'); e.className = 'cal-day empty'; grid.appendChild(e);
     }
     for (let d = 1; d <= daysInMonth; d++) {
-      const el = document.createElement('div');
+      const date = new Date(calYear, calMonth, d);
+      const dow  = date.getDay();
+      const el   = document.createElement('div');
       el.className = 'cal-day';
       el.textContent = d;
-      const thisDate = new Date(calYear, calMonth, d);
-      const isWeekend = thisDate.getDay() === 0 || thisDate.getDay() === 6;
-      const isPast = thisDate < new Date(today.getFullYear(), today.getMonth(), today.getDate());
-      const isToday = d === today.getDate() && calMonth === today.getMonth() && calYear === today.getFullYear();
-      if (isPast || isWeekend) { el.classList.add('past'); }
-      else {
-        if (isToday) el.classList.add('today');
-        if (urgentDays.includes(d)) el.classList.add('has-slots');
-        el.addEventListener('click', () => selectDate(d, el));
-      }
-      if (selectedDate && selectedDate.d === d && selectedDate.m === calMonth && selectedDate.y === calYear) {
-        el.classList.add('selected');
+      const isPast  = date < today;
+      const isWkend = dow === 0 || dow === 6;
+      const blocked = isDayBlocked(calYear, calMonth, d);
+      if (isPast || isWkend) {
+        el.classList.add('past');
+      } else if (blocked) {
+        el.classList.add('past', 'limited');
+        el.title = 'Vollgebucht';
+      } else {
+        el.classList.add('available');
+        if (date.toDateString() === new Date().toDateString()) el.classList.add('today');
+        if (selectedDate && selectedDate.y === calYear && selectedDate.m === calMonth && selectedDate.d === d)
+          el.classList.add('selected');
+        el.addEventListener('click', () => selectDate(d));
       }
       grid.appendChild(el);
     }
   }
 
-  function selectDate(d, el) {
-    document.querySelectorAll('.cal-day').forEach(x => x.classList.remove('selected'));
-    el.classList.add('selected');
-    selectedDate = { d, m: calMonth, y: calYear };
-    selectedTime = null;
-    renderSlots(d);
-    updateSummary();
+  function selectDate(d) {
+    selectedDate = { y: calYear, m: calMonth, d };
+    selectedTime = SLOT;
+    renderCalendar(); renderSlots(); updateSummary();
   }
 
-  function renderSlots(d) {
+  function renderSlots() {
     const grid = document.getElementById('slots-grid');
     grid.innerHTML = '';
-    const busyForDay = fullSlots[d] || [];
-    timeSlots.forEach(t => {
-      const btn = document.createElement('button');
-      btn.className = 'slot-btn';
-      btn.textContent = t;
-      if (busyForDay.includes(t)) { btn.classList.add('full'); btn.disabled = true; }
-      else {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('selected'));
-          btn.classList.add('selected');
-          selectedTime = t;
-          updateSummary();
-        });
-      }
-      grid.appendChild(btn);
-    });
+    if (!selectedDate) {
+      grid.innerHTML = '<div style="grid-column:1/-1;color:var(--gray-400);font-size:.85rem;padding:8px 0">Bitte wählen Sie zuerst ein Datum.</div>';
+      return;
+    }
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'slot-btn selected';
+    btn.textContent = 'Vormittags';
+    grid.appendChild(btn);
+    const note = document.createElement('div');
+    note.style.cssText = 'grid-column:1/-1;font-size:.8rem;color:var(--gray-400);padding:6px 0';
+    note.textContent = 'Pro Tag ist genau ein Termin verfügbar. Die genaue Uhrzeit stimmen wir telefonisch ab.';
+    grid.appendChild(note);
   }
 
   function prevMonth() { if (calMonth === 0) { calMonth = 11; calYear--; } else calMonth--; renderCalendar(); }
   function nextMonth() { if (calMonth === 11) { calMonth = 0; calYear++; } else calMonth++; renderCalendar(); }
 
-  // ── STEPS ──────────────────────────────────────────────────────
-  function goStep(n) { if (n > currentStep) return; setStep(n); }
+  // ── STEPS ─────────────────────────────────────────────────────
+  function goStep(n) { if (n < currentStep) setStep(n); }
 
   function setStep(n) {
     document.querySelectorAll('.form-section').forEach(s => s.classList.remove('visible'));
-    const sec = document.getElementById(`section-${n}`);
+    const sec = document.getElementById('section-' + n);
     if (sec) sec.classList.add('visible');
     document.querySelectorAll('.step').forEach((s, i) => {
       s.classList.remove('active','done');
@@ -281,6 +445,7 @@
     if (n === 3) { next.textContent = 'Termin absenden ✓'; next.classList.add('btn-submit'); }
     else { next.textContent = 'Weiter →'; next.classList.remove('btn-submit'); }
     currentStep = n;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function nextStep() {
@@ -292,7 +457,6 @@
       setStep(2);
     } else if (currentStep === 2) {
       if (!selectedDate) { alert('Bitte wählen Sie ein Datum aus.'); return; }
-      if (!selectedTime) { alert('Bitte wählen Sie eine Uhrzeit aus.'); return; }
       setStep(3);
     } else if (currentStep === 3) {
       submitForm();
@@ -303,17 +467,31 @@
 
   function updateSummary() {
     if (selectedDate) {
-      const d = `${String(selectedDate.d).padStart(2,'0')}.${String(selectedDate.m+1).padStart(2,'0')}.${selectedDate.y}`;
+      const d = String(selectedDate.d).padStart(2,'0') + '.' +
+                String(selectedDate.m + 1).padStart(2,'0') + '.' + selectedDate.y;
       document.getElementById('sum-date').textContent = d;
       document.getElementById('sum-date').classList.remove('empty');
     }
     if (selectedTime) {
-      document.getElementById('sum-time').textContent = selectedTime + ' Uhr';
+      document.getElementById('sum-time').textContent = 'Vormittags (nach Absprache)';
       document.getElementById('sum-time').classList.remove('empty');
     }
   }
 
-  // ── SUBMIT MIT EMAILJS ─────────────────────────────────────────
+  ['fname','lname'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', () => {
+      const f = document.getElementById('fname').value.trim();
+      const l = document.getElementById('lname').value.trim();
+      if (f || l) {
+        const s = document.getElementById('sum-contact');
+        s.textContent = (f + ' ' + l).trim();
+        s.classList.remove('empty');
+      }
+    });
+  });
+
+  // ── SUBMIT ──────────────────────────────────────────────────────
   function submitForm() {
     const fname   = document.getElementById('fname').value.trim();
     const lname   = document.getElementById('lname').value.trim();
@@ -321,85 +499,73 @@
     const email   = document.getElementById('email').value.trim();
     const address = document.getElementById('address').value.trim();
     const privacy = document.getElementById('privacy').checked;
-    const objtype = document.getElementById('objtype').value;
-    const message = document.getElementById('message').value.trim();
+    const objtype = document.getElementById('objtype').value || 'Nicht angegeben';
+    const message = document.getElementById('message').value.trim() || 'Keine Nachricht';
     const service = document.querySelector('input[name="service"]:checked').value;
 
     if (!fname || !lname || !phone || !email || !address) {
       alert('Bitte füllen Sie alle Pflichtfelder aus.'); return;
     }
-    if (!privacy) {
-      alert('Bitte stimmen Sie der Datenschutzerklärung zu.'); return;
-    }
+    if (!privacy) { alert('Bitte stimmen Sie der Datenschutzerklärung zu.'); return; }
 
-    // Datum formatieren
-    const datumFormatiert = `${String(selectedDate.d).padStart(2,'0')}.${String(selectedDate.m+1).padStart(2,'0')}.${selectedDate.y}`;
-
-    // Button deaktivieren & Ladetext anzeigen
     const btn = document.getElementById('btn-next');
     btn.textContent = 'Wird gesendet...';
     btn.disabled = true;
 
-    // EmailJS Parameter – müssen exakt den {{variablen}} im Template entsprechen
-    const templateParams = {
+    const datum = String(selectedDate.d).padStart(2,'0') + '.' +
+                  String(selectedDate.m + 1).padStart(2,'0') + '.' + selectedDate.y;
+    const ref   = 'KT-' + Math.floor(100000 + Math.random() * 900000);
+
+
+    // EmailJS send
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
       service:   service,
-      datum:     datumFormatiert,
-      uhrzeit:   selectedTime + ' Uhr',
+      datum:     datum,
+      uhrzeit:   'Vormittags (genaue Zeit wird telefonisch abgestimmt)',
       name:      fname + ' ' + lname,
+      vorname:   fname,
       telefon:   phone,
       email:     email,
+      to_email:  email,
+      reply_to:  'office@dual-klima.at',
       adresse:   address,
-      objekttyp: objtype || 'Nicht angegeben',
-      nachricht: message || 'Keine Nachricht'
-    };
+      objekttyp: objtype,
+      nachricht: message,
+      referenz:  ref
+    })
+    .then(() => {
+      // Block this day for future visitors
+      blockDay(toDateStr(selectedDate.y, selectedDate.m, selectedDate.d));
 
-    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
-      .then(() => {
-        // Erfolg
-        const ref = 'KT-' + Math.floor(100000 + Math.random() * 900000);
-        document.getElementById('booking-ref').textContent = ref;
-        document.getElementById('sum-contact').textContent = `${fname} ${lname}`;
-        document.getElementById('sum-contact').classList.remove('empty');
 
-        document.querySelector('.steps').style.display = 'none';
-        document.getElementById('form-footer').style.display = 'none';
-        document.querySelectorAll('.form-section').forEach(s => s.classList.remove('visible'));
-        document.getElementById('success-view').classList.add('visible');
-      })
-      .catch((error) => {
-        // Fehler
-        console.error('EmailJS Fehler:', error);
-        btn.textContent = 'Termin absenden ✓';
-        btn.disabled = false;
-        document.querySelector('.steps').style.display = 'none';
-        document.getElementById('form-footer').style.display = 'none';
-        document.querySelectorAll('.form-section').forEach(s => s.classList.remove('visible'));
-        document.getElementById('error-view').classList.add('visible');
-      });
+      // Show success screen
+      document.getElementById('booking-ref').textContent = ref;
+      document.getElementById('steps-bar').style.display  = 'none';
+      document.getElementById('form-footer').style.display = 'none';
+      document.querySelectorAll('.form-section').forEach(s => s.classList.remove('visible'));
+      document.getElementById('success-view').classList.add('visible');
+    })
+    .catch(err => {
+      console.error('EmailJS Fehler:', err);
+      btn.textContent = 'Termin absenden ✓'; btn.disabled = false;
+      document.getElementById('steps-bar').style.display  = 'none';
+      document.getElementById('form-footer').style.display = 'none';
+      document.querySelectorAll('.form-section').forEach(s => s.classList.remove('visible'));
+      document.getElementById('error-view').classList.add('visible');
+    });
   }
 
   function resetError() {
     document.getElementById('error-view').classList.remove('visible');
-    document.querySelector('.steps').style.display = 'flex';
+    document.getElementById('steps-bar').style.display  = 'flex';
     document.getElementById('form-footer').style.display = 'flex';
     const btn = document.getElementById('btn-next');
-    btn.textContent = 'Termin absenden ✓';
-    btn.disabled = false;
+    btn.textContent = 'Termin absenden ✓'; btn.disabled = false;
     setStep(3);
   }
 
-  // ── INIT ───────────────────────────────────────────────────────
+  // ── INIT ──────────────────────────────────────────────────────
   renderCalendar();
-  ['fname','lname'].forEach(id => {
-    document.getElementById(id).addEventListener('input', () => {
-      const f = document.getElementById('fname').value.trim();
-      const l = document.getElementById('lname').value.trim();
-      if (f || l) {
-        document.getElementById('sum-contact').textContent = `${f} ${l}`.trim();
-        document.getElementById('sum-contact').classList.remove('empty');
-      }
-    });
-  });
 </script>
 </body>
 </html>
